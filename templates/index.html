@@ -1,0 +1,18 @@
+<form method="post">
+  <label for="description">Description:</label><br>
+  <input type="text" id="description" name="description"><br>
+  <label for="price">Price:</label><br>
+  <input type="number" id="price" name="price"><br><br>
+  <input type="submit" value="Add">
+</form>
+
+<h2>Items</h2>
+<ul>
+  {% for item in items %}
+    <li>{{ item.description }} - {{ item.price }}</li>
+  {% endfor %}
+</ul>
+
+<form method="post" action="/save">
+  <input type="submit" value="Save">
+</form>
